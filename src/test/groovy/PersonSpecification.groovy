@@ -7,7 +7,6 @@ class PersonSpecification extends Specification {
         given:
         def person = new Person();
 
-
         when:
         String fullName = person.getFullName(firstName, lastName);
 
@@ -15,21 +14,18 @@ class PersonSpecification extends Specification {
         thrown(IllegalArgumentException);
 
         where:
-        firstName << [null, "", " "];
-        lastName << ["   ", "", null];
+        firstName << [null, "", " ","A","A","A",null, "", " "];
+        lastName << [null, "", " ",null, "", " ","A","A","A"];
     }
 
     def "Should return full name if both first name and last name are not empty"() {
         given:
         def person = new Person();
 
-
         when:
         String fullName = person.getFullName("P", "K");
 
         then:
         fullName == "P K";
-
-
     }
 }

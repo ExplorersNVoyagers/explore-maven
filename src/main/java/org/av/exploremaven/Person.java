@@ -15,7 +15,7 @@ public class Person {
 
     public String getFullName(String firstName, String lastName) {
 
-        if (firstName == null || firstName.isEmpty() || firstName.isBlank())
+        if (firstName == null || firstName.isBlank())
             throw new IllegalArgumentException("First Name is empty or invalid");
 
         if (lastName == null || lastName.isBlank())
